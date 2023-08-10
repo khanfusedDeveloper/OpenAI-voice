@@ -1,0 +1,28 @@
+{
+  "name": "openai-voice",
+  "version": "1.0.0",
+  "description": "simple openAI-voice integration ",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khanfusedDeveloper/OpenAI-voice.git"
+  },
+  "author": "khanfusedDeveloper",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khanfusedDeveloper/OpenAI-voice/issues"
+  },
+  "homepage": "https://github.com/khanfusedDeveloper/OpenAI-voice#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "bootstrap": "^5.3.1",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
