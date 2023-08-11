@@ -10,13 +10,33 @@ form.addEventListener('submit', function(event) {
   event.preventDefault();
 
   const text = input.value;
+  console.log("frontend value being sent: ", text);
 
-  // Create a SpeechSynthesisUtterance object
-  const msg = new SpeechSynthesisUtterance();
-  msg.text = text;
+  fetch("/process-text", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
 
-  // Call the speech synthesis API to generate speech
-  window.speechSynthesis.speak(msg);
+    },
+    body: JSON.stringify({text})  })
+  .then(response => response.json())
+  .then(data => {
+
+    console.log("backend response 1: ", data.message);
+    console.log("backend response 2: ", data.processedText);
+
+  })
+  .catch(error => {
+    console.error("Error", error);
+  })
+
+
+  // // Create a SpeechSynthesisUtterance object
+  // const msg = new SpeechSynthesisUtterance();
+  // msg.text = text;
+
+  // // Call the speech synthesis API to generate speech
+  // window.speechSynthesis.speak(msg);
 
   // Clear the input
   input.value = '';
