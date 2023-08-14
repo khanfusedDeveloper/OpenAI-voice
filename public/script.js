@@ -16,15 +16,12 @@ form.addEventListener('submit', function(event) {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
-
     },
     body: JSON.stringify({text})  })
   .then(response => response.json())
   .then(data => {
-
     console.log("backend response 1: ", data.message);
     console.log("backend response 2: ", data.processedText);
-
   })
   .catch(error => {
     console.error("Error", error);
